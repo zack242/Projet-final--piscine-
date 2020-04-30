@@ -14,11 +14,14 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
+.dll
 
 # Fortran module files
 *.mod
 *.smod
+*.layout
+*.depend
+
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +33,7 @@
 *.exe
 *.out
 *.app
+
+#Generated directories 
+bin/
+obj/
