@@ -21,7 +21,7 @@
 *.smod
 *.layout
 *.depend
-*.txt
+
 
 # Compiled Static libraries
 *.lai
