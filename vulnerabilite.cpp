@@ -50,7 +50,7 @@ void Graphe::GrapheConnexe()
 
 Graphe* Graphe::Sup_aretes()
 {
-//Calculer des indices avant suppression graphe
+  //Calculer des indices avant suppression graphe
     calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
@@ -119,6 +119,19 @@ Graphe* Graphe::Sup_aretes()
         }
 
     }
+
+
+
+
+for(int k =0; k<t_indice.size();k++)
+    {
+    m_arrets.erase(m_arrets.begin()+t_indice[k]);
+
+    }
+
+
+
+
 
 }
 

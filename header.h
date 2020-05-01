@@ -369,7 +369,7 @@ public :
         BITMAP* page ;
         install_keyboard();
 
-        if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,640,480,0,0)!=0)
+        if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,700,500,0,0)!=0)
         {
             allegro_message("prb gfx mode");
             allegro_exit();
