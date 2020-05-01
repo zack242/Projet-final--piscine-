@@ -1,7 +1,7 @@
 #include <iostream>
 #include "header.h"
 
-float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[100][100],int p)
+float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[500][500],int p)
 {
     float ca[taille][taille],cb[taille][taille],tot;
     float nbtotal=0;
@@ -155,7 +155,7 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
 
     int taille=0;
     int chemin_t[NbNodes] ;
-    float matrice[100][100];
+    float matrice[500][500];
     for (int i = 0; i < NbNodes; i++)
     {
         for (int j = 0; j < NbNodes; j++)
@@ -223,9 +223,9 @@ void Graphe::centraliteintermediarite()const
 {
 
     int taille=m_sommets.size();
-    float matrice[100][100];
-    float matricedist[100][100];
-    float matricenbchemin[100][100];
+    float matrice[500][500];
+    float matricedist[500][500];
+    float matricenbchemin[500][500];
     float indice_nn=0;
     std::vector<float> tempindice;
     std::map<const Sommet*,int> suceur;

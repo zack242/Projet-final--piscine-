@@ -59,13 +59,15 @@ Graphe* Graphe::Sup_aretes()
 
     std::vector<int> t_indice;
     std::map<const Sommet*,int> succes;
+    std::map<const Sommet*,int> temp;
+    std::map<const Sommet*,int> temp2;
 
 
 
     std::cout<<"Arrets : \n";
 
     for(int i =0 ; i<m_arrets.size() ; i++)
-        std::cout<<"Indice : "<<i<<" : "<<m_arrets[i].first<<"-"<<m_arrets[i].second<<std::endl;
+        std::cout<<"Indice : "<<i<<" : "<<m_arrets[i].first+'54'<<"-"<<m_arrets[i].second+'54'<<std::endl;
 
     int indice;
 
@@ -89,7 +91,8 @@ Graphe* Graphe::Sup_aretes()
 
     for(auto s : m_sommets)
     {
-        std::map<const Sommet*,int> temp;
+
+        temp.clear();
         for(int z=0; z < t_indice.size(); z++)
         {
             if(s->getNum()== m_arrets[t_indice[z]].first )
@@ -103,7 +106,7 @@ Graphe* Graphe::Sup_aretes()
                 s->setsucc(temp);
             }
 
-            std::map<const Sommet*,int> temp2;
+            temp2.clear();
             if(s->getNum()== m_arrets[t_indice[z]].second )
             {
                 for( auto succ : s->getSuccesseurs() )
@@ -127,6 +130,7 @@ m_taille=m_taille-t_indice.size();
 
 for(int k =0; k<t_indice.size();k++)
     {
+
     m_arrets.erase(m_arrets.begin()+t_indice[k]);
 
     }

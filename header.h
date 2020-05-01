@@ -165,18 +165,18 @@ public :
     {
         const char *nom = m_nom.c_str();
 
-        textprintf_ex(bmp,font,m_x+250,m_y+250-30,makecol(0,0,0),-1,nom);
+      //  textprintf_ex(bmp,font,m_x+,m_y-30,makecol(0,0,0),-1,nom);
 
 
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
-            line(bmp,m_x+250,m_y+250,s.first->getX()+250,s.first->getY()+250,makecol(255,0,0));
+            line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(255,0,0));
 
         }
 
-        circlefill(bmp,m_x+250,m_y+250,2,makecol(m_couleur,0,0)); ///Cercle pour la visu des indices
+        circlefill(bmp,m_x,m_y,2,makecol(m_couleur,0,0)); ///Cercle pour la visu des indices
 
-        circlefill(bmp,m_x+250,m_y+250,0,makecol(0,0,0));
+        circlefill(bmp,m_x,m_y,0,makecol(0,0,0));
 
     }
 
@@ -381,7 +381,7 @@ public :
         BITMAP* page ;
         install_keyboard();
 
-        if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,700,500,0,0)!=0)
+        if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,700,700,0,0)!=0)
         {
             allegro_message("prb gfx mode");
             allegro_exit();
