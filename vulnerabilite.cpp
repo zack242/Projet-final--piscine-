@@ -121,6 +121,8 @@ Graphe* Graphe::Sup_aretes()
     }
 
 
+m_taille=m_taille-t_indice.size();
+
 
 
 for(int k =0; k<t_indice.size();k++)
@@ -128,6 +130,7 @@ for(int k =0; k<t_indice.size();k++)
     m_arrets.erase(m_arrets.begin()+t_indice[k]);
 
     }
+
 
 
 
@@ -156,6 +159,7 @@ void Graphe::ComparaisonIndice()
         indice_proximite.push_back(k->getIndice(3));
         indice_degresNN.push_back(k->getIndice(0));
         indice_degresN.push_back(k->getIndice(1));
+        indice_intermedaire.push_back(k->getIndice(4));
 
 
     }
@@ -177,7 +181,7 @@ void Graphe::ComparaisonIndice()
         std::cout<<"Indice proximite :            ";
         std::cout<<indice_proximite[i]<<" - "<<s->getIndice(3)<<" = "<<indice_proximite[i]-s->getIndice(3)<<std::endl;
         std::cout<<"Indice intermediare :         ";
-        //  std::cout<<indice_intermedaire[i]<<" - "<<s->getIndice(4)<<" = "<<indice_intermedaire[i]-s->getIndice(4)<<std::endl;
+        std::cout<<indice_intermedaire[i]<<" - "<<s->getIndice(4)<<" = "<<indice_intermedaire[i]-s->getIndice(4)<<std::endl;
 
         std::cout<<"\n";
         i++;

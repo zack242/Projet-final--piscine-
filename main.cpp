@@ -43,6 +43,7 @@ Graphe* menu(Graphe* A)
 
 
 
+
     switch (choix)
     {
 
@@ -130,6 +131,9 @@ Graphe* menu(Graphe* A)
 
             A->centraliteintermediarite();
             A->affi_indice_centralite();
+            A->Visualisation_indice(choix_indice);
+            A->Dessiner();
+            A->sauvgarder(choix_indice);
             break;
 
 

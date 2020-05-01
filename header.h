@@ -80,6 +80,7 @@ public :
     {
         switch(choix)
         {
+
         case 1 :
             return m_indice.degre_nomralise;
 
@@ -88,6 +89,9 @@ public :
 
         case 3 :
             return m_indice.proximite_normalise;
+
+        case 4 :
+            return m_indice.intermediaire_nomralise;
 
 
 
@@ -193,6 +197,10 @@ public :
 
         case 3 :
             ofs << m_num <<" "<<m_indice.proximite_normalise <<" "<<m_indice.proximite_normalise<< std::endl ;
+            break;
+
+            case 4 :
+            ofs << m_num <<" "<<m_indice.intermediaire_nomralise<<" "<<m_indice.intermediaire_non_normamise<< std::endl ;
             break;
 
 
@@ -360,6 +368,8 @@ public :
             std::cout<<std::endl;
         }
 
+
+
     }
 
 
@@ -390,6 +400,7 @@ public :
         }
 
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
+         std::cout<<"\nTaille : "<<m_taille;
 
 
         ///Proto des methodes

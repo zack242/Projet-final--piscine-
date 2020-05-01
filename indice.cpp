@@ -207,7 +207,7 @@ void Sommet::indice_centralite(float ordre,float indicenn)
 void Sommet::affi_centralite_sommmet() const
 {
     std::cout<<" sommet : "<<m_nom<< std::endl;
-    std::cout<<"indice de centralite normalise : "<<m_indice.intermediaire_nomralise<<" indice de centralite non normalise : "<<m_indice.intermediaire_non_normamise<< std::endl;
+    std::cout<<"Indice de centralite normalise : "<<m_indice.intermediaire_nomralise<<"\nIndice de centralite non normalise : "<<m_indice.intermediaire_non_normamise<< std::endl;
 
 }
 void Graphe::affi_indice_centralite() const
