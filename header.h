@@ -213,6 +213,8 @@ public :
 
     void indice_centralite(float ordre,float indicenn);
 
+    void affi_centralite_sommmet() const;
+
 
 };
 
@@ -460,6 +462,7 @@ public :
     void ComparaisonIndice();
     std::vector<std::pair<int,int>> Dijkstra(int num_s0)const;
     void centraliteintermediarite()const;
+    void affi_indice_centralite() const;
 
 };
 

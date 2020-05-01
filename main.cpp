@@ -129,6 +129,7 @@ Graphe* menu(Graphe* A)
         case 4 : ///Centralite d'intermediaire
 
             A->centraliteintermediarite();
+            A->affi_indice_centralite();
             break;
 
 

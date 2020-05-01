@@ -51,17 +51,7 @@ float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[100][100
     }
 
     nbtotal=ca[sum_1][sum_2];
-    /*
-        std::cout<<"ligne : "<<sum_1<<" ,colonne : "<<sum_2<<" ,valeur : "<<nbtotal<<" ,puisance : "<<p<<std::endl;
-    for (int i = 0; i < taille; i++)
-    {
-        for (int j = 0; j < taille; j++)
-        {
-            std::cout<<ca[i][j]<<" ";
-        }
-         std::cout << std::endl;
-    }
-    */
+
     return nbtotal;
 }
 
@@ -191,37 +181,13 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
         {
             for (int i = 1; i < taille+1; i++)
             {
-                //std::cout<<"teste : 1 "<<"indice: "<<j <<"ttchemin : "<<chemin_t[j]<<std::endl;
                 chemin_t[j]=chemin_t[j]+nbtopluscourtchemin(j,num_s0,NbNodes,matrice,i);
-                //std::cout<<"teste : 2 "<<"indice: "<<j <<"ttchemin : "<<chemin_t[j]<<std::endl;
+
             }
             Distances[j].second=chemin_t[j];
         }
 
     }
-
-    /*std::cout<<"sommet "<<num_s0<<" taille "<<taille<<" : "<< std::endl;
-    for (int i = 0; i < NbNodes; i++)
-    {
-        for (int j = 0; j < NbNodes; j++)
-        {
-            std::cout<<matrice[i][j]<<" ";
-        }
-         std::cout << std::endl;
-    }
-    for (auto i = 0; i != NbNodes; ++i)                                            // résultat
-    {
-        if(i !=num_s0 )
-        {
-            std::cout << "\nnoeud  " << num_s0 << " au noeud " << i << " longueur :  " << Distances[i].first<< " nombre_chemin  " << chemin_t[i]<< std::endl;
-
-            std::cout << i;
-            for (auto p = Parents[i][0]; p != -1; p = Parents[p][0])
-                std::cout << " <- " << p;
-            std::cout << std::endl;
-        }
-    }*/
-
 
     return Distances;
 
@@ -236,7 +202,21 @@ void Sommet::indice_centralite(float ordre,float indicenn)
     m_indice.intermediaire_non_normamise=indicenn;
 
     m_indice.intermediaire_nomralise=(indicenn/normalisation);
-    std::cout<<"normalise : "<<m_indice.intermediaire_nomralise<<" nn : "<<m_indice.intermediaire_non_normamise<< std::endl;
+
+}
+void Sommet::affi_centralite_sommmet() const
+{
+    std::cout<<" sommet : "<<m_nom<< std::endl;
+    std::cout<<"indice de centralite normalise : "<<m_indice.intermediaire_nomralise<<" indice de centralite non normalise : "<<m_indice.intermediaire_non_normamise<< std::endl;
+
+}
+void Graphe::affi_indice_centralite() const
+{
+    for (auto s : m_sommets)
+    {
+        s->affi_centralite_sommmet();
+        std::cout<<std::endl;
+    }
 }
 
 void Graphe::centraliteintermediarite()const
@@ -282,14 +262,14 @@ void Graphe::centraliteintermediarite()const
         }
     }
 
-    for (int i = 0; i < taille; i++)
+    /*for (int i = 0; i < taille; i++)
     {
         for (int j = 0; j < taille; j++)
         {
             std::cout<<"("<<matricedist[i][j]<<","<<matricenbchemin[i][j]<<") ";
         }
         std::cout<<std::endl;
-    }
+    }*/
 
     for (int i = 0; i < taille; ++i)
     {
@@ -336,9 +316,7 @@ void Graphe::affi_indice_Tdegre() const
 }
 
 
-
 //////////////////////////////////////////////////////////////////// Indice Vecteur propre
-
 
 
 void Graphe::calcul_vecteur_propre()
