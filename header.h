@@ -165,8 +165,8 @@ public :
     {
         const char *nom = m_nom.c_str();
 
-      //  textprintf_ex(bmp,font,m_x+,m_y-30,makecol(0,0,0),-1,nom);
-
+        textprintf_ex(bmp,font,m_x,m_y-30,makecol(0,0,0),-1,nom);
+       // textprintf(bmp,font,m_x,m_y,makecol(0,0,0);
 
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
@@ -288,6 +288,12 @@ public :
             temp.degre_non_normamise=0;
             temp.degre_nomralise=0;
             temp.vecteur=1;
+            temp.intermediaire_nomralise=0;
+            temp.intermediaire_non_normamise=0;
+            temp.proximite_non_normalise=0;
+            temp.proximite_normalise=0;
+
+
             m_sommets.push_back( new Sommet{index,nom,x,y,temp});
 
         }
@@ -472,7 +478,7 @@ public :
     Graphe* Sup_aretes();
     void ComparaisonIndice();
     std::vector<std::pair<int,int>> Dijkstra(int num_s0)const;
-    void centraliteintermediarite()const;
+    void centraliteintermediarite();
     void affi_indice_centralite() const;
 
 };

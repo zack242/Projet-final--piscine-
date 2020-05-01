@@ -67,7 +67,7 @@ Graphe* Graphe::Sup_aretes()
     std::cout<<"Arrets : \n";
 
     for(int i =0 ; i<m_arrets.size() ; i++)
-        std::cout<<"Indice : "<<i<<" : "<<m_arrets[i].first+'54'<<"-"<<m_arrets[i].second+'54'<<std::endl;
+        std::cout<<"Indice : "<<i<<" : "<<m_arrets[i].first<<"-"<<m_arrets[i].second<<std::endl;
 
     int indice;
 
@@ -171,6 +171,7 @@ void Graphe::ComparaisonIndice()
     calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
+    centraliteintermediarite();
 
     for(auto s : m_sommets)
     {
