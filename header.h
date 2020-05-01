@@ -81,6 +81,9 @@ public :
         switch(choix)
         {
 
+     case 0:
+         return m_indice.degre_non_normamise;
+
         case 1 :
             return m_indice.degre_nomralise;
 
