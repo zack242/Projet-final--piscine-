@@ -536,14 +536,14 @@ void Graphe::Visualisation_indice(int indice)
     case 1 :  ///Pour chaque indice on push l'indice dans valeur indice suivant le choix du client
 
         for(auto k : m_sommets)
-            valeurindice.push_back(k->getIndice(indice));
+            valeurindice.push_back(k->getIndice(0));
 
         break;
 
     case 2 : /// Indice vecteur propre
 
         for(auto k : m_sommets)
-            valeurindice.push_back(k->getIndice(indice));
+            valeurindice.push_back(k->getIndice(2));
 
         break;
 
@@ -551,14 +551,14 @@ void Graphe::Visualisation_indice(int indice)
     case 3 : /// Indice vecteur proximite
 
         for(auto k : m_sommets)
-            valeurindice.push_back(k->getIndice(indice));
+            valeurindice.push_back(k->getIndice(3));
 
         break;
 
     case 4 : /// Indice intermediare
 
         for(auto k : m_sommets)
-            valeurindice.push_back(k->getIndice(indice));
+            valeurindice.push_back(k->getIndice(4));
 
         break;
 
@@ -570,7 +570,7 @@ void Graphe::Visualisation_indice(int indice)
         for(int i=0 ; i<valeurindice.size(); i++)
             if(valeurindice[i]==k->getIndice(indice))
                 if(k->getColor()==0)
-                    k->setColor(20*i); /// A voir
+                    k->setColor(100*i); /// A voir
 
 
 
