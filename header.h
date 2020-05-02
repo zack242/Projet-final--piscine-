@@ -276,6 +276,7 @@ public :
 
             int couleur=0;
 
+            if(fichier_topo=="RER.txt")
             ligne>>couleur;
 
 // Initialisation des indices
@@ -393,7 +394,7 @@ public :
 
 
         page=create_bitmap(SCREEN_W,SCREEN_H);
-        clear_to_color(page,makecol(255,255,255));
+        clear_to_color(page,makecol(240,220,210));
 
 
         for (auto s : m_sommets)
