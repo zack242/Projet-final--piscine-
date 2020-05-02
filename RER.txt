@@ -1,0 +1,938 @@
+0
+234
+0	Cergy-Le_Haut	171	96
+
+1	Cergy_Saint-Christophe	184	114
+
+2	Cergy_Prefecture	182	133
+
+3	Neuville_Universite	183	151
+
+4	Conflans_Fin_dOise	189	170
+
+5	Acheres_Ville	200	180
+
+6	Poissy	125	200
+
+7	Acheres-Grand_Cormier	160	192
+
+8	Maisons-Laffitte	216	195
+
+9	Sartrouville	228	208
+
+10	Houilles-Carrieres-sur-Seine	238	219
+
+11	Saint-Germain-en-Laye	158	251
+
+12	Le_Vesinet-Le_Pecq	171	265
+
+13	Le_Vesinet_Centre	183	276
+
+14	Chatou-Croissy	199	284
+
+15	Rueil-Malmaison	229	265
+
+16	Nanterre_Ville	241	255
+
+17	Nanterre_Universite	252	243
+
+18	Nanterre_Prefecture	263	244
+
+19	La_Defense(Grande_Arche)	279	258
+
+20	Charles-de-Gaulle-etoile	307	284
+
+21	Auber	341	286
+
+22	Chatelet-Les_Halles	391	308
+
+23	Paris_Gare_de_Lyon	412	336
+
+24	Nation	453	328
+
+25	Vincennes	488	328
+
+26	Val_de_Fontenay	525	312
+
+27	Neuilly-Plaisance	545	312
+
+28	Bry-sur-Marne	566	319
+
+29	Noisy_le_Grand-Mont_dEst	582	329
+
+30	Noisy-Champs	616	326
+
+31	Noisiel	653	325
+
+32	Lognes	683	325
+
+33	Torcy	707	311
+
+34	Bussy-Saint-Georges	717	298
+
+35	Val_dEurope	730	287
+
+36	Marne-la-Vallee-Chessy	742	276
+
+37	Fontenay-sous-Bois	517	340
+
+38	Nogent-sur-Marne	517	360
+
+39	Joinville-le-Pont	517	372
+
+40	Saint-Maur-Creteil	522	388
+
+41	Le_Parc_de_Saint-Maur	540	398
+
+42	Champigny	559	395
+
+43	La_Varenne-Chennevieres	563	413
+
+44	Sucy-Bonneuil	565	431
+
+45	Aroport_Charles_de_Gaulle_2_TGV	591	140
+
+46	Aroport_Charles_de_Gaulle_1	559	139
+
+47	Parc_des_Expositions	539	151
+
+48	Villepinte	547	172
+
+49	Sevran-Beaudottes	562	188
+
+50	Mitry-Claye	646	182
+
+51	Villeparisis-Mitry-le-Neuf	630	199
+
+52	Vert-Galant	605	205
+
+53	Sevran-Livry	574	205
+
+54	Aulnay-sous-Bois	540	204
+
+55	Le_Blanc-Mesnil	509	205
+
+56	Drancy	491	216
+
+57	Le_Bourget	460	216
+
+58	La_Courneuve-Aubervilliers	434	215
+
+59	La_Plaine-Stade_de_France	403	227
+
+60	Gare_du_Nord	396	254
+
+61	Chatelet-Les_Halles	392	313
+
+62	Saint-Michel-Notre-Dame	372	359
+
+63	Luxembourg	371	369
+
+64	Port-Royal	371	376
+
+65	Denfert-Rochereau	371	385
+
+66	Cite´_Universitaire	371	391
+
+67	Gentilly	371	401
+
+68	Laplace	371	409
+
+69	Arcueil-Cachan	370	420
+
+70	Bagneux	369	431
+
+71	Bourg-la-Reine	347	431
+
+72	Sceaux	318	433
+
+73	Fontenay-aux-Roses	288	447
+
+74	Robinson	250	450
+
+75	Parc_de_Sceaux	351	459
+
+76	La_Croix_de_Berny	341	469
+
+77	Antony	330	483
+
+78	Fontaine_Michalon	320	490
+
+79	Les_Baconnets	302	508
+
+80	Massy-Verrie`res	291	522
+
+81	Massy-Palaiseau	280	534
+
+82	Palaiseau	268	541
+
+83	Palaiseau-Villebon	251	546
+
+84	Loze`re	233	548
+
+85	Le_Guichet	213	547
+
+86	Orsay-Ville	196	559
+
+87	Bures-sur-Yvette	183	570
+
+88	La_Hacquinie`re	170	581
+
+89	Gif-sur-Yvette	149	582
+
+90	Courcelle-sur-Yvette	129	582
+
+91	Pontoise	239	98
+
+92	Saint-Ouen_de_lAumone	252	110
+
+93	Saint-Ouen_de_lAumone_Liesse	263	122
+
+94	Pierrelaye	275	133
+
+95	Beauchamp	287	144
+
+96	Bouchard	296	154
+
+97	Cernay	311	165
+
+98	Eaubonne	321	177
+
+99	Gratien	332	185
+
+100	epinay_sur_Seine	342	199
+
+101	Gennevilliers	346	214
+
+102	Gresillons	346	229
+
+103	saint_Ouen	337	250
+
+104	porte_de_Clichy	321	264
+
+105	Levallois	296	289
+
+106	neuilly_porte_Maillot	285	304
+
+107	Foch	283	318
+
+108	Martin	282	328
+
+109	Boulainvilliers	295	342
+
+110	Kennedy	300	360
+
+111	Yvelines	137	446
+
+112	Bretonneux	176	454
+
+113	Cyr	186	432
+
+114	Chantiers	213	430
+
+115	Gauche	246	417
+
+116	Porchefontaine	258	409
+
+117	Gauche	273	406
+
+118	Velizy	289	400
+
+119	Fleury	302	387
+
+120	Issy	301	372
+
+121	Seine	302	355
+
+122	Garigliano	306	339
+
+123	Pompidou	314	339
+
+124	Javel	323	323
+
+125	Eiffel	329	325
+
+126	lAlma	336	325
+
+127	Invalides	413	360
+
+129	dOrsay	428	377
+
+130	Dame	438	398
+
+131	Austerlitz	443	414
+
+132	Mitterrand	437	426
+
+133	Seine	441	441
+
+134	Seine	220	457
+
+135	Ardoines	239	473
+
+136	Loges	253	485
+
+137	Josas	263	499
+
+138	Vauboyen	276	507
+
+139	Bievres	294	526
+
+140	Igny	308	513
+
+141	Palaiseau	326	500
+
+142	Verrieres	341	485
+
+143	dAntony	378	475
+
+144	Fraternelle	408	479
+
+145	dOrly	435	461
+
+146	Ville	441	443
+
+147	Saules	440	486
+
+148	Roi	441	508
+
+149	Roi	440	508
+
+150	Ablon	441	524
+
+151	Mons	425	557
+
+152	Vaux	405	570
+
+153	Orge	395	588
+
+154	Orge	377	604
+
+155	Bois	371	625
+
+156	Orge	372	646
+
+157	Bretigny	361	665
+
+158	Arpajon	331	670
+
+159	Arpajon	301	667
+
+160	egly	275	672
+
+161	Chatel	239	673
+
+162	Village	201	672
+
+163	Cheron	163	673
+
+164	Sermaise	131	673
+
+165	Dourdan	101	672
+
+166	Foret	372	669
+
+167	Hurepoix	357	687
+
+168	Coye	481	18
+
+169	Blanche	483	40
+
+170	Fosses	484	49
+
+171	Louvres	484	56
+
+172	Noues	484	72
+
+173	Goussainville	484	91
+
+174	Arnouville	478	109
+
+175	Sarcelles	463	125
+
+176	Stains	446	143
+
+177	Denis	426	159
+
+178	Nord	412	173
+
+179	Halles	389	203
+
+180	Lyon	388	252
+
+181	Alfortville	389	308
+
+182	Maisons	410	338
+
+183	Pompadour	453	404
+
+184	Triage	453	421
+
+185	Georges	452	438
+
+186	Crosne	452	448
+
+187	Yerres	452	473
+
+188	Brunoy	452	494
+
+189	Antoine	469	524
+
+190	Quincy	485	542
+
+191	Moissy	504	558
+
+192	Nandy	518	576
+
+193	Cesson	535	593
+
+194	Mee	557	612
+
+195	Melun	568	627
+
+196	Seine	586	644
+
+197	Juvisy	620	679
+
+198	Chatillon	448	539
+
+199	Orangis	427	562
+
+200	Bourg	442	582
+
+201	Essonnes	472	611
+
+202	Centre	488	627
+
+203	Epine	501	659
+
+204	Genopole	500	680
+
+205	Robinson	512	696
+
+206	Villabe	552	720
+
+207	Chenet	588	684
+
+208	Montceaux	620	677
+
+209	Fargeau	514	666
+
+210	Pringy	476	690
+
+211	Roi	465	702
+
+212	Vosves	455	710
+
+213	Galant	453	718
+
+214	Mennecy	453	730
+
+215	Haussmann–Saint-Lazare_	451	755
+
+216	Magenta	450	764
+
+217	Pantin	340	279
+
+218	Noisy-le-Sec	403	261
+
+219	Bondy	403	261
+
+220	LeRaincy–Villemomble–Montfermeil	457	251
+
+221	Gagny	489	249
+
+222	LeChenay–Gagny	489	249
+
+223	Chelles–Gournay	524	251
+
+224	Rosny–Bois-Perrier	524	251
+
+225	Rosny-sous-Bois	547	262
+
+226	ValdeFontenay	547	262
+
+227	Nogent–LePerreux	563	276
+
+228	LesBoullereaux–Champigny	589	278
+
+229	Villiers-sur-Marne–LePlessis-Trevise	589	278
+
+230	LesYvris–Noisy-le-Grand	519	260
+
+231	emerainville–Pontault-Combault	519	260
+
+232	Roissy-en-Brie	520	264
+
+233	Ozoir-la-Ferriere	526	289
+
+234	Gretz-Armainvilliers	527	313
+
+231
+0	0	1
+
+1	1	2
+
+2	2	3
+
+3	3	4
+
+4	4	5
+
+5	5	8
+
+6	6	7
+
+7	7	8
+
+8	8	9
+
+9	9	10
+
+10	10	18
+
+11	11	12
+
+12	12	13
+
+13	13	14
+
+14	14	15
+
+15	15	16
+
+16	16	17
+
+17	17	18
+
+18	18	19
+
+19	19	20
+
+20	20	21
+
+21	21	22
+
+22	22	23
+
+23	23	24
+
+24	24	25
+
+25	25	26
+
+26	26	27
+
+27	27	28
+
+28	28	29
+
+29	29	30
+
+30	30	31
+
+31	31	32
+
+32	32	33
+
+33	33	34
+
+34	34	35
+
+35	35	36
+
+36	36	35
+
+37	37	25
+
+38	38	39
+
+39	39	40
+
+40	40	41
+
+41	41	42
+
+42	42	43
+
+43	43	44
+
+44	44	43
+
+45	45	46
+
+46	46	47
+
+47	47	48
+
+48	48	49
+
+49	49	54
+
+50	50	51
+
+51	51	52
+
+52	52	53
+
+53	53	54
+
+54	54	55
+
+55	55	56
+
+56	56	57
+
+57	57	58
+
+58	58	59
+
+59	59	60
+
+60	60	61
+
+61	61	62
+
+62	62	63
+
+63	63	64
+
+64	64	65
+
+65	65	66
+
+66	66	67
+
+67	67	68
+
+68	68	69
+
+69	69	70
+
+70	70	71
+
+71	71	72
+
+72	72	73
+
+73	73	74
+
+74	74	73
+
+75	75	71
+
+76	76	77
+
+77	77	78
+
+78	78	79
+
+79	79	80
+
+80	80	81
+
+81	81	82
+
+82	82	83
+
+83	83	84
+
+84	84	85
+
+85	85	86
+
+86	86	87
+
+87	87	88
+
+88	88	89
+
+89	89	90
+
+90	90	89
+
+91	91	92
+
+92	92	93
+
+93	93	94
+
+94	94	95
+
+95	95	96
+
+96	96	97
+
+97	97	98
+
+98	98	99
+
+99	99	100
+
+100	100	101
+
+101	101	102
+
+102	102	103
+
+103	103	104
+
+104	104	105
+
+105	105	106
+
+106	106	107
+
+107	107	108
+
+108	108	109
+
+109	109	110
+
+110	110	111
+
+111	111	113
+
+112	112	114
+
+113	113	115
+
+114	114	116
+
+115	115	117
+
+116	116	118
+
+117	117	119
+
+118	118	120
+
+119	119	121
+
+120	120	122
+
+121	121	123
+
+122	122	124
+
+123	123	125
+
+124	124	126
+
+125	125	127
+
+126	126	128
+
+127	127	130
+
+129	129	131
+
+130	130	132
+
+131	131	133
+
+132	132	134
+
+133	133	135
+
+134	134	136
+
+135	135	137
+
+136	136	138
+
+137	137	139
+
+138	138	140
+
+139	139	141
+
+140	140	142
+
+141	141	143
+
+142	142	144
+
+143	143	145
+
+144	144	146
+
+145	145	147
+
+146	146	148
+
+147	147	149
+
+148	148	150
+
+149	149	151
+
+150	150	152
+
+151	151	153
+
+152	152	154
+
+153	153	155
+
+154	154	156
+
+155	155	157
+
+156	156	158
+
+157	157	159
+
+158	158	160
+
+159	159	161
+
+160	160	161
+
+161	161	162
+
+162	162	163
+
+163	163	164
+
+164	164	165
+
+165	165	166
+
+166	166	167
+
+167	167	166
+
+168	168	169
+
+169	169	170
+
+170	170	171
+
+171	171	172
+
+172	172	173
+
+173	173	174
+
+174	174	175
+
+175	175	176
+
+176	176	177
+
+177	177	178
+
+178	178	179
+
+179	179	180
+
+180	180	181
+
+181	181	182
+
+182	182	183
+
+183	183	184
+
+184	184	185
+
+185	185	186
+
+186	186	187
+
+187	187	188
+
+188	188	189
+
+189	189	190
+
+190	190	191
+
+191	191	192
+
+192	192	193
+
+193	193	194
+
+194	194	195
+
+195	195	212
+
+196	196	185
+
+197	197	198
+
+198	198	199
+
+199	199	200
+
+200	200	201
+
+201	201	213
+
+202	202	203
+
+203	203	204
+
+204	204	205
+
+205	205	206
+
+206	206	207
+
+207	207	208
+
+208	208	209
+
+209	209	210
+
+210	210	211
+
+211	211	212
+
+212	212	213
+
+213	213	214
+
+214	214	213
+
+215	215	216
+
+216	216	217
+
+219	217	218
+
+220	218	219
+
+221	219	220
+
+222	220	221
+
+223	221	222
+
+224	222	223
+
+225	223	222
+
+226	224	218
+
+227	225	226
+
+228	226	227
+
+229	227	228
+
+230	228	229
+
+231	229	230
+
+232	230	231
+
+233	231	232
+
+234	232	233
+
+235	233	234
+
+236	234	235

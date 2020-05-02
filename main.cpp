@@ -54,8 +54,8 @@ Graphe* menu(Graphe* A)
         ///std::cin>>fichier_topo;
         std::cout<<"Nom du fichier de ponderations : ";
          ///std::cin>>fichier_ponde;
-        fichier_ponde="poids";
-        fichier_topo="graphe";
+        fichier_ponde="poidsRER";
+        fichier_topo="RER";
 
         A=Chargement_Graphe(fichier_topo,fichier_ponde);
         A->setnomFichier(fichier_topo);
@@ -198,7 +198,7 @@ Graphe* Chargement_Graphe(std::string fichier_topo, std::string fichier_ponde)  
     temp_topo=fichier_topo+".txt";
     temp_pond=fichier_ponde+".txt";
 
-    std::cout<<temp_topo;
+  //  std::cout<<temp_topo;
 
 
     B=new Graphe{temp_topo,temp_pond}; /// Allocation du graphe

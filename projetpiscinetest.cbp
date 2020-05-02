@@ -36,6 +36,7 @@
 		<Linker>
 			<Add library="alleg44.dll" />
 		</Linker>
+		<Unit filename="Graphique.cpp" />
 		<Unit filename="header.h" />
 		<Unit filename="indice.cpp" />
 		<Unit filename="main.cpp" />

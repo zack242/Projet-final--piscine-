@@ -34,6 +34,7 @@ private :
     int m_num;
     int m_x,m_y;
     indice m_indice; ///Struct stockant les indices
+    int m_ligne;
 
 
     std::map<const Sommet*,int> m_successeurs; ///chaque sommet possède la liste de ses successeurs (un vecteur de pointeurs sur Sommet)
@@ -42,9 +43,11 @@ private :
 public :
 
     /*constructeur*/
-    Sommet(int num,std::string nom,int x,int y,indice a):m_num{num},m_nom{nom},m_x{x},m_y{y},m_indice{a}
+    Sommet(int num,std::string nom,int x,int y,indice a,int ligne):m_num{num},m_nom{nom},m_x{x},m_y{y},m_indice{a}
     {
         m_couleur=0;
+        m_ligne=ligne;
+
     };
 
     /*accesseurs*/
@@ -81,8 +84,8 @@ public :
         switch(choix)
         {
 
-     case 0:
-         return m_indice.degre_non_normamise;
+        case 0:
+            return m_indice.degre_non_normamise;
 
         case 1 :
             return m_indice.degre_nomralise;
@@ -157,31 +160,15 @@ public :
     /* méthode d'affichage*/
     void afficher() const
     {
-        std::cout<<"     sommet "<<m_nom<<"-"<<m_num<<" Coords : "<<m_x<<" ; "<<m_y<<" : ";
+        std::cout<<"     Sommet "<<m_nom<<"  -  "<<m_num<<" : ";
         for (auto s : m_successeurs)
-            std::cout<<s.first->getNum()<<" ("<<s.second<<") ";
+            std::cout<<s.first->getNom()<<"    ";
     }
 
 
 
-    void Dessiner(BITMAP* bmp)
-    {
-        const char *nom = m_nom.c_str();
+    void Dessiner(BITMAP* bmp);
 
-        textprintf_ex(bmp,font,m_x,m_y-30,makecol(0,0,0),-1,nom);
-       // textprintf(bmp,font,m_x,m_y,makecol(0,0,0);
-
-        for (auto s : m_successeurs) ///Dessin des Arcs
-        {
-            line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(255,0,0));
-
-        }
-
-        circlefill(bmp,m_x,m_y,2,makecol(m_couleur,0,0)); ///Cercle pour la visu des indices
-
-        circlefill(bmp,m_x,m_y,0,makecol(0,0,0));
-
-    }
 
 
     void sauvgarderindice(std::ofstream &ofs,int choix) const
@@ -202,7 +189,7 @@ public :
             ofs << m_num <<" "<<m_indice.proximite_normalise <<" "<<m_indice.proximite_normalise<< std::endl ;
             break;
 
-            case 4 :
+        case 4 :
             ofs << m_num <<" "<<m_indice.intermediaire_nomralise<<" "<<m_indice.intermediaire_non_normamise<< std::endl ;
             break;
 
@@ -254,6 +241,7 @@ public :
 
         std::ifstream ifs{fichier_topo}; ///Ouverture des flux
         std::ifstream ifp{fichier_ponde};
+        std::ifstream ligne{"ligne.txt"};
 
         if (!ifs)
             throw std::runtime_error( "Impossible d'ouvrir en lecture " + fichier_topo );
@@ -279,7 +267,7 @@ public :
 
             std::string nom ;
             ifs >> nom ;
-            // std::cout<<nom<<std::endl;
+
             if ( ifs.fail() )
                 throw std::runtime_error("Probleme lecture du nom du sommet");
 
@@ -287,6 +275,13 @@ public :
             ifs >> x>>y;
             if ( ifs.fail() )
                 throw std::runtime_error("Probleme lecture des coords du sommet");
+
+            int couleur=0;
+
+            ligne>>couleur;
+
+
+
             indice temp;
             temp.degre_non_normamise=0;
             temp.degre_nomralise=0;
@@ -297,9 +292,10 @@ public :
             temp.proximite_normalise=0;
 
 
-            m_sommets.push_back( new Sommet{index,nom,x,y,temp});
+            m_sommets.push_back( new Sommet{index,nom,x-60,y-50,temp,couleur});
 
         }
+
 
         int taille_topo;
         int taille_pondo;
@@ -324,6 +320,7 @@ public :
 
         for (int i=0; i<taille_topo; ++i)
         {
+            std::cout<<num1<<std::endl;
             ifs>>index>>num1>>num2;
             ifp>>index>>poids;
 
@@ -374,7 +371,7 @@ public :
         for (auto s : m_sommets)
         {
             s->afficher();
-            std::cout<<std::endl;
+            std::cout<< " "<<std::endl;
         }
 
 
@@ -409,7 +406,7 @@ public :
         }
 
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
-         std::cout<<"\nTaille : "<<m_taille;
+        std::cout<<"\nTaille : "<<m_taille;
 
 
         ///Proto des methodes
