@@ -20,12 +20,12 @@ int main()
 }
 END_OF_MAIN();
 
-
+//SS menu
 
 Graphe* menu(Graphe* A)
 {
 
-    int choix=0,choix_indice=0,choix_action=0,choix_vulnerabilite=0 ;
+    int choix=0,choix_indice=0,choix_action=0,choix_vulnerabilite=0;
     std::string fichier_topo;
     std::string fichier_ponde;
 
@@ -51,9 +51,10 @@ Graphe* menu(Graphe* A)
 
 
         std::cout<<"Nom du fichier de topologie : ";
-        ///std::cin>>fichier_topo;
+        //std::cin>>fichier_topo;
         std::cout<<"Nom du fichier de ponderations : ";
-         ///std::cin>>fichier_ponde;
+        ///std::cin>>fichier_ponde;
+
         fichier_ponde="poidsRER";
         fichier_topo="RER";
 
@@ -74,7 +75,7 @@ Graphe* menu(Graphe* A)
         break;
 
 
-    case 3 : /// Calculer , afficher , Saivgarder
+    case 3 : /// Calculer , afficher , Sauvgarder
 
 
         std::cout<<"           Choix indice \n\n";
@@ -99,9 +100,7 @@ Graphe* menu(Graphe* A)
             A->affi_indice_Tdegre();
             A->Visualisation_indice(choix_indice);
             A->Dessiner();
-
             A->sauvgarder(choix_indice);
-
 
             break;
 
@@ -112,8 +111,6 @@ Graphe* menu(Graphe* A)
             A->Visualisation_indice(choix_indice);
             A->Dessiner();
             A->sauvgarder(choix_indice);
-
-
 
             break ;
 
@@ -147,7 +144,8 @@ Graphe* menu(Graphe* A)
 
         break;
 
-    case 4 :
+    case 4 : /// Test de Vulnerabilite
+
         std::cout<<"\n1/ Test de la connexite du graphe \n";
         std::cout<<"2/ Suppression d’une ou plusieurs arêtes \n \n ";
         std::cout<<"Votre choix : ";
@@ -187,6 +185,8 @@ Graphe* menu(Graphe* A)
 }
 
 
+//SS Chargement graphe
+
 Graphe* Chargement_Graphe(std::string fichier_topo, std::string fichier_ponde)  ///SS Chargement d'un graphe depuis fichier
 {
 
@@ -197,8 +197,6 @@ Graphe* Chargement_Graphe(std::string fichier_topo, std::string fichier_ponde)  
 
     temp_topo=fichier_topo+".txt";
     temp_pond=fichier_ponde+".txt";
-
-  //  std::cout<<temp_topo;
 
 
     B=new Graphe{temp_topo,temp_pond}; /// Allocation du graphe

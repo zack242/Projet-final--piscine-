@@ -1,7 +1,9 @@
 #include <iostream>
 #include "header.h"
 
-
+//SS Graphe Connexe() Utilsation de allego djiskra pour trouve les composant Connexxe
+// Si sommet non explore Distance = 999
+// Ainsi on parcours a chaque fois un somme non explore
 
 void Graphe::GrapheConnexe()
 {
@@ -9,9 +11,9 @@ void Graphe::GrapheConnexe()
     std::vector<int> distance;
     std::vector<int> couleur((int)m_sommets.size(),0);
     std::vector<std::vector<int>> CC;
+
     int NonSommet=0;
     int k=0;
-    int e=0;
     bool check=true ;
 
     while(check!=false)
@@ -30,17 +32,14 @@ void Graphe::GrapheConnexe()
             }
             else if(couleur[i]==0)
             {
-               e++;
-                std::cout<<" "<<m_sommets[i]->getNom()<<std::endl;
+
+                std::cout<<"  "<<m_sommets[i]->getNom();
                 couleur[i]=1;
 
             }
 
         }
         k++;
-        std::cout<<"---- "<<e<<" \n";
-        e=0;
-
     }
 
     if(k==1)
@@ -51,34 +50,48 @@ void Graphe::GrapheConnexe()
 
 }
 
-
+// SS De suppression d'une arrets
 
 Graphe* Graphe::Sup_aretes()
 {
   //Calculer des indices avant suppression graphe
+
     calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
+ ///   calcul_indice_proximite();
 
-
-
+//On declare des tableaux qui vont nous servir de buffer
     std::vector<int> t_indice;
     std::map<const Sommet*,int> succes;
     std::map<const Sommet*,int> temp;
     std::map<const Sommet*,int> temp2;
 
+    std::string depart,arrive;
 
 
     std::cout<<"Arrets : \n";
 
-    for(int i =0 ; i<m_arrets.size() ; i++)
-        std::cout<<"Indice : "<<i<<" : "<<m_arrets[i].first<<"-"<<m_arrets[i].second<<std::endl;
+    for(int i =0 ; i<m_arrets.size() ; i++)  // On affiche les arrets
+        {
 
-    int indice;
+for(auto s : m_sommets) // On associer les arrets a des nom
+    {
 
+     if(m_arrets[i].first==s->getNum())
+        depart=s->getNom();
 
+     if(m_arrets[i].second==s->getNum())
+        arrive=s->getNom();
 
-    std::cout<<"\n99 / Pour quitter la saisie \n ";
+    }
+    std::cout<<"Indice : "<<i<<" : "<<depart<<" - "<<arrive<<std::endl;
+
+     }
+
+    int indice=0;
+
+    std::cout<<"\n99 / Pour Quitter la saisie \n ";
     std::cout<<"Saisir l'indice des aretes a supprimer \n";
     while(indice!=99)
     {
@@ -90,14 +103,15 @@ Graphe* Graphe::Sup_aretes()
     }
 
 
-    t_indice.pop_back();
+    t_indice.pop_back(); // On Supprimer le 99
 
 
 
-    for(auto s : m_sommets)
+    for(auto s : m_sommets) // On parcours les sommets
     {
 
         temp.clear();
+        // On cherche quelle sommmet est conserner par l'arrets
         for(int z=0; z < t_indice.size(); z++)
         {
             if(s->getNum()== m_arrets[t_indice[z]].first )
@@ -105,7 +119,7 @@ Graphe* Graphe::Sup_aretes()
                 for( auto succ : s->getSuccesseurs() )
                 {
                     if (succ.first->getNum() != m_arrets[t_indice[z]].second)
-                        temp[succ.first]=succ.second;
+                        temp[succ.first]=succ.second;  // On utiliser un nouveau tableau pour remmplace les succeurs des sommets
                 }
 
                 s->setsucc(temp);
@@ -129,16 +143,13 @@ Graphe* Graphe::Sup_aretes()
     }
 
 
-m_taille=m_taille-t_indice.size();
+m_taille=m_taille-t_indice.size(); // Suite a la suppresion d'une arrets la taille est reduite
 
 
 
-for(int k =0; k<t_indice.size();k++)
-    {
+for(int k =0; k<t_indice.size();k++) // De meme pour l'arrets
+            m_arrets.erase(m_arrets.begin()+t_indice[k]);
 
-    m_arrets.erase(m_arrets.begin()+t_indice[k]);
-
-    }
 
 
 
@@ -147,6 +158,7 @@ for(int k =0; k<t_indice.size();k++)
 
 }
 
+// SS De comparaison des indices
 
 void Graphe::ComparaisonIndice()
 {

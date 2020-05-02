@@ -12,9 +12,6 @@
 #include <limits>
 
 
-
-
-
 struct indice
 {
     float degre_non_normamise,degre_nomralise;
@@ -31,10 +28,10 @@ class Sommet
 
 private :
     std::string m_nom;
-    int m_num;
-    int m_x,m_y;
+    int m_num=0;
+    int m_x=0,m_y=0;
     indice m_indice; ///Struct stockant les indices
-    int m_ligne;
+    int m_ligne=0;
 
 
     std::map<const Sommet*,int> m_successeurs; ///chaque sommet possède la liste de ses successeurs (un vecteur de pointeurs sur Sommet)
@@ -47,6 +44,7 @@ public :
     {
         m_couleur=0;
         m_ligne=ligne;
+
 
     };
 
@@ -79,7 +77,7 @@ public :
     }
 
 
-    float getIndice(int choix) const
+    float getIndice(int choix) const // On get l'indice passe en parametre
     {
         switch(choix)
         {
@@ -98,9 +96,6 @@ public :
 
         case 4 :
             return m_indice.intermediaire_nomralise;
-
-
-
 
         }
 
@@ -167,10 +162,10 @@ public :
 
 
 
-    void Dessiner(BITMAP* bmp);
 
 
 
+//On sauvgarde suivant le choix passe en parametre
     void sauvgarderindice(std::ofstream &ofs,int choix) const
     {
 
@@ -213,6 +208,7 @@ public :
 
     void affi_centralite_sommmet() const;
     void DessinSommet(BITMAP* bmp) ;
+    void Dessiner(BITMAP* bmp);
 
 
 };
@@ -282,7 +278,7 @@ public :
 
             ligne>>couleur;
 
-
+// Initialisation des indices
 
             indice temp;
             temp.degre_non_normamise=0;
@@ -322,7 +318,6 @@ public :
 
         for (int i=0; i<taille_topo; ++i)
         {
-            std::cout<<num1<<std::endl;
             ifs>>index>>num1>>num2;
             ifp>>index>>poids;
 
@@ -410,7 +405,6 @@ public :
             s->DessinSommet(page);
 
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
-        std::cout<<"\nTaille : "<<m_taille;
 
 
         ///Proto des methodes

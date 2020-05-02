@@ -299,7 +299,7 @@ void Graphe::affi_indice_Tdegre() const
 
 //////////////////////////////////////////////////////////////////// Indice Vecteur propre
 
-
+// SS de calcul du vecteur propre
 void Graphe::calcul_vecteur_propre()
 {
 
@@ -310,10 +310,9 @@ void Graphe::calcul_vecteur_propre()
     float lamdatemp=0;
     std::vector<float> stock((int)m_sommets.size(),0);
 
-    int j=0;
     int k=0;
 
-    calcul_indice_degres();
+    calcul_indice_degres(); // On calcul le degres d'indice.
     do
     {
 
@@ -321,7 +320,8 @@ void Graphe::calcul_vecteur_propre()
 
         k=0;
         S_total=0;
-        for (auto s : m_sommets)
+
+        for (auto s : m_sommets) // ON parcours les sommets et somme l'indice de degres
         {
             S_indice=0;
             for(auto succ : s->getSuccesseurs())
@@ -336,7 +336,7 @@ void Graphe::calcul_vecteur_propre()
 
         }
 
-        lamda=sqrt(S_total);
+        lamda=sqrt(S_total); // On calcul lamda
 
         int i=0;
 
@@ -350,7 +350,7 @@ void Graphe::calcul_vecteur_propre()
 
 
     }
-    while(lamda != lamdatemp);
+    while(lamda != lamdatemp); // Tant que lamda varie pas trop
 
 }
 
@@ -386,7 +386,7 @@ std::vector<int> Graphe::AlegoDjiskra(int num_D) // Alego de Djiskra
     std::vector<int> preds((int)m_sommets.size(),-1);
 
 
-    int num_F=5;
+
     bool M = false; //booleen pour savoir si tout les sommets sont marquees
     int temp=999; // Utiliser pour determiner le min
     int index=0;
@@ -478,6 +478,7 @@ std::vector<int> Graphe::AlegoDjiskra(int num_D) // Alego de Djiskra
 
 }
 
+//SS Calcul indice proximite
 
 void Graphe::calcul_indice_proximite()
 {
@@ -487,17 +488,17 @@ void Graphe::calcul_indice_proximite()
     for(auto s : m_sommets)
     {
         temp=0;
-        preds=AlegoDjiskra(s->getNum());
+        preds=AlegoDjiskra(s->getNum()); // On appel Djiskra pour chaque sommet
         for(auto k : preds)
 
             for(int i=0 ; i<preds.size(); i++)
             {
-                temp+=preds[i];
+                temp+=preds[i]; // ON sommet l'ensemvle des distance
                 //  std::cout<<"\n temp "<<temp<<"preds "<<preds[i];
             }
 
 
-        s->setIndice_proximite((m_taille-1)/temp,1);
+        s->setIndice_proximite((m_taille-1)/temp,1); // On normalise
         s->setIndice_proximite(temp,2);
 
     }
@@ -521,6 +522,8 @@ void Graphe::affi_indice_Tproximite() const
         std::cout<<std::endl;
     }
 }
+
+// SS fonction de visualisation d'indice
 
 void Graphe::Visualisation_indice(int indice)
 {
@@ -567,7 +570,7 @@ void Graphe::Visualisation_indice(int indice)
         for(int i=0 ; i<valeurindice.size(); i++)
             if(valeurindice[i]==k->getIndice(indice))
                 if(k->getColor()==0)
-                    k->setColor(100+20*i);
+                    k->setColor(20*i); /// A voir
 
 
 
