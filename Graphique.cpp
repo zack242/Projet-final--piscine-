@@ -7,7 +7,7 @@ void Sommet::Dessiner(BITMAP* bmp)
 
    circlefill(bmp,m_x,m_y,6,makecol(m_couleur,0,0)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
 
-    if(m_ligne==2)
+    if(m_ligne==24)
     {
 
 
@@ -20,7 +20,7 @@ void Sommet::Dessiner(BITMAP* bmp)
         }
          circlefill(bmp,m_x,m_y,3,makecol(255,20,0));
     }
-    else if(m_ligne==2)
+    else if(m_ligne==25)
     {
 
         for (auto s : m_successeurs) ///Dessin des Arcs
@@ -33,10 +33,10 @@ void Sommet::Dessiner(BITMAP* bmp)
          circlefill(bmp,m_x,m_y,3,makecol(60,145,220));
 
     }
-    else if(m_ligne==2)
+    else if(m_ligne==26)
     {
 
-
+//textprintf_ex(bmp,font,m_x,m_y,makecol(0,0,0),-1,nom);
 
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
@@ -47,10 +47,10 @@ void Sommet::Dessiner(BITMAP* bmp)
         }
          circlefill(bmp,m_x,m_y,3,makecol(220,150,0));
     }
-    else if(m_ligne==2)
+    else if(m_ligne==27)
     {
 
- textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
+ //textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(0,150,65));
@@ -63,7 +63,7 @@ void Sommet::Dessiner(BITMAP* bmp)
     else if(m_ligne==28)
     {
 
-         textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
+        //textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
 
