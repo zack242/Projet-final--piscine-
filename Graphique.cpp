@@ -50,7 +50,7 @@ void Sommet::Dessiner(BITMAP* bmp)
     else if(m_ligne==27)
     {
 
- //textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
+ textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(0,150,65));

@@ -266,7 +266,7 @@
 
 132	vitry_sur_Seine	439	431
 
-133	Ardoines	440	450
+133	Ardoines	440	454
 
 134	Loges	239	474
 
@@ -330,140 +330,140 @@
 
 164	Foret	91	669
 
-165	Coye	357	687
+165	Coye	484	49
 
-166	Blanche	481	18
+166	Blanche	484	56
 
-167	Fosses	483	40
+167	Fosses	484	72
 
-168	Louvres	484	49
+168	Louvres	484	91
 
-169	Noues	484	56
+169	Noues	478	109
 
-170	Goussainville	484	72
+170	Goussainville	463	125
 
-171	Arnouville	484	91
+171	Arnouville	446	143
 
-172	Sarcelles	478	109
+172	Sarcelles	426	159
 
-173	Stains	463	125
+173	Stains	412	173
 
-174	Denis	446	143
+174	Denis	389	203
 
-175	Nord	426	159
+175	Nord	388	252
 
-176	Halles	412	173
+176	Halles	389	308
 
-177	Lyon	389	203
+177	Lyon	410	338
 
-178	Alfortville	388	252
+178	Alfortville	453	404
 
-179	Maisons	389	308
+179	Maisons	453	421
 
-180	Pompadour	410	338
+180	Pompadour	452	438
 
-181	Triage	453	404
+181	Triage	452	448
 
-182	Georges	453	421
+182	Georges	452	473
 
-183	Crosne	452	438
+183	Crosne	452	494
 
-184	Yerres	452	448
+184	Yerres	469	524
 
-185	Brunoy	452	473
+185	Brunoy	485	542
 
-186	Antoine	452	494
+186	Antoine	504	558
 
-187	Quincy	469	524
+187	Quincy	518	576
 
-188	Moissy	485	542
+188	Moissy	535	593
 
-189	Nandy	504	558
+189	Nandy	557	612
 
-190	Cesson	518	576
+190	Cesson	568	627
 
-191	Mee	535	593
+191	Mee	586	644
 
-192	Melun	557	612
+192	Melun	620	679
 
-193	Seine	568	627
+193	Seine	448	539
 
-194	Juvisy	586	644
+194	Juvisy	427	562
 
-195	Chatillon	620	679
+195	Chatillon	442	582
 
-196	Orangis	448	539
+196	Orangis	472	611
 
-197	Bourg	427	562
+197	Bourg	488	627
 
-198	Essonnes	442	582
+198	Essonnes	501	659
 
-199	Centre	472	611
+199	Centre	500	680
 
-200	Epine	488	627
+200	Epine	512	696
 
-201	Genopole	501	659
+201	Genopole	552	720
 
-202	Robinson	500	680
+202	Robinson	588	684
 
-203	Villabe	512	696
+203	Villabe	620	677
 
-204	Chenet	552	720
+204	Chenet	514	666
 
-205	Montceaux	588	684
+205	Montceaux	476	690
 
-206	Fargeau	620	677
+206	Fargeau	465	702
 
-207	Pringy	514	666
+207	Pringy	455	710
 
-208	Roi	476	690
+208	Roi	453	718
 
-209	Vosves	465	702
+209	Vosves	453	730
 
-210	Galant	455	710
+210	Galant	451	755
 
-211	Mennecy	453	718
+211	Mennecy	450	764
 
-212	Haussmann–Saint-Lazare_	453	730
+212	Haussmann–Saint-Lazare_	340	279
 
-213	Magenta	451	755
+213	Magenta	403	261
 
-214	Pantin	450	764
+214	Pantin	403	261
 
-215	Noisy-le-Sec	340	279
+215	Noisy-le-Sec	457	251
 
-216	Bondy	403	261
+216	Bondy	489	249
 
-217	LeRaincy–Villemomble–Montfermeil	403	261
+217	LeRaincy–Villemomble–Montfermeil	495	255
 
-218	Gagny	457	251
+218	Gagny	524	260
 
-219	LeChenay–Gagny	489	249
+219	LeChenay–Gagny	535	260
 
-220	Chelles–Gournay	489	249
+220	Chelles–Gournay	565	260
 
-221	Rosny–Bois-Perrier	524	251
+221	Rosny–Bois-Perrier	495	280
 
-222	Rosny-sous-Bois	524	251
+222	Rosny-sous-Bois	499	295
 
-223	ValdeFontenay	547	262
+223	ValdeFontenay	510	315
 
-224	Nogent–LePerreux	547	262
+224	Nogent–LePerreux	525	325
 
-225	LesBoullereaux–Champigny	563	276
+225	LesBoullereaux–Champigny	530	330
 
-226	Villiers-sur-Marne–LePlessis-Trevise	589	278
+226	Villiers-sur-Marne–LePlessis-Trevise	550	350
 
-227	LesYvris–Noisy-le-Grand	589	278
+227	LesYvris–Noisy-le-Grand	565	365
 
-228	emerainville–Pontault-Combault	519	260
+228	emerainville–Pontault-Combault	580	380
 
-229	Roissy-en-Brie	519	260
+229	Roissy-en-Brie	595	395
 
-230	Ozoir-la-Ferriere	520	264
+230	Ozoir-la-Ferriere	610	410
 
-231	Gretz-Armainvilliers	526	289
-166
+231	Gretz-Armainvilliers	625	425
+233
 0	0	1
 
 1	1	2
@@ -793,4 +793,82 @@
 
 164	164	163
 
-165 150 151
+165 	165	166
+166	166	167
+167	167	168
+168	168	169
+169	169	170
+170	170	171
+171	171	172
+172	172	173
+173	173	174
+174	174	175
+175	175	176
+176	176	177
+177	177	178
+178	178	179
+179	179	180
+180	180	181
+181	181	182
+182	182	183
+183	183	184
+184	184	185
+185	185	186
+186	186	187
+187	187	188
+188	188	189
+189	189	190
+190	190	191
+191	191	192
+192	192	191
+
+193	183	193
+194	193	194
+195	194	195
+196	195	196
+197	196	197
+198	197	198
+199	198	199
+200	199	200
+201	200	201
+202	201	202
+203	202	203
+
+204	198	204
+
+205	204	205
+
+206	205	206
+207	206	207
+208	207	208
+209	208	209
+210	209	210
+
+211	210	211
+
+
+212	212	213
+213	213	214
+214	214	215
+215	215	216
+216	216	217
+217	217	218
+218	218	219
+219	219	220
+220	220	219
+
+221	221	222
+222	222	223
+223	223	224
+
+224	224	225
+225	225	226
+226	226	227
+227	227	228
+228	228	229
+229	229	230
+230	230	231
+231	231	230
+
+232	215	221
+		
