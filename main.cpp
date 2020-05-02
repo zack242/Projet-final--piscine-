@@ -129,7 +129,6 @@ Graphe* menu(Graphe* A)
 
         case 4 : ///Centralite d'intermediaire
 
-           std::cout<<"ouou";
             A->centraliteintermediarite();
             A->affi_indice_centralite();
             A->Visualisation_indice(choix_indice);

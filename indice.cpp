@@ -2,6 +2,7 @@
 
 float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300],int p)
 {
+//Porgramme utiliser pour metre une matrice d'adjacence a une certaine puissance et nous donne ainsi le nombre de chemin possible entre 2 sommets du graphe qui comporte un nombre d'arret égale a la puissance
     float ca[taille][taille],cb[taille][taille],tot;
     float nbtotal=0;
 
@@ -13,10 +14,11 @@ float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300
             ca[i][j]=matrice[i][j];
         }
     }
-//si la puissance demander vaut 1 on affiche juste
+//si la puissance demander vaut 1 on ne fait rien
     if(p==1)
     {
     }
+//sinon pour chaque puissance -1 on entre dans notre boucle de calcul
     else
     {
 
@@ -24,6 +26,7 @@ float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300
         {
             for(int i=0; i<taille; i++)
             {
+                //transfert de notre matrice de calcul dans une matrice second matrice
                 for(int j=0; j<taille; j++)
                 {
                     cb[i][j]=ca[i][j];
@@ -38,9 +41,10 @@ float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300
                     tot=0;
                     for(int k=0; k<taille; k++)
                     {
+                        //on calcule la puissance de la matrice
                         tot=tot+(cb[i][k]*matrice[k][j]);
                     }
-
+//on récupaire le résultat
                     ca[i][j]=tot;
                 }
             }
@@ -48,7 +52,7 @@ float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300
         }
 
     }
-
+//on récupaire et renvoi au programme appelant le nombre de chemin
     nbtotal=ca[sum_1][sum_2];
 
     return nbtotal;
@@ -82,7 +86,7 @@ void Sommet::affi_degre_sommmet() const
 
 }
 
-
+//inisialisation de la fonction de trie pour notre fil de priorité
 auto cmp = [](std::pair<const Sommet*,double> p1, std::pair<const
               Sommet*,double> p2)
 {
@@ -142,6 +146,7 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
                     }
                     file.push({m_sommets[v2],Distances[v2].first});//on push le sommet et la ditance dans notre file
                 }
+                //ici on récupaire égalment les chemins égaux au plus court chemin
                 else if (Distances[v].first + w2 == Distances[v2].first)
                 {
                     int dep=0;
@@ -151,11 +156,11 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
                     }
                     Parents[v2][dep] = v;
                 }
-
             }
         }
     }
-
+//dans cette partie on remplie une matrice avec la taille des plus cours chemin et une autre avec leur nombre
+//on remplie la matrice d'adjacence du graph orienté oubtenu grace a l'algorithme de Dijkstra
     int taille=0;
     int chemin_t[NbNodes] ;
     float matrice[300][300];
@@ -176,8 +181,8 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
             ++j;
             ++taille;
         }
-
     }
+    //a l'aide du programme qui "nbtopluscourtchemin" on conte le nombre total de plus court chemin
     for (int j = 0; j < NbNodes; j++)
     {
         if(j !=num_s0 )
@@ -189,11 +194,9 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
             }
             Distances[j].second=chemin_t[j];
         }
-
     }
-
+//on return au programme appelent la liste des plus court chemin du sommet demander
     return Distances;
-
 }
 void Sommet::indice_centralite(float ordre,float indicenn)
 {
@@ -224,12 +227,9 @@ void Graphe::affi_indice_centralite() const
 
 void Graphe::centraliteintermediarite()
 {
-
-
-
+// ce programme regoupe dans 2 matrice la distance des plus cours chemin et leurs nombre pour pouvoir calculer l'indice de centralité intermédiaire
     int taille=m_sommets.size();
 
-    float matrice[300][300];
     float matricedist[300][300];
     float matricenbchemin[300][300];
     float indice_nn=0;
@@ -241,20 +241,8 @@ void Graphe::centraliteintermediarite()
     {
         for (int j = 0; j < taille; j++)
         {
-            matrice[i][j] = 0;
             matricedist[i][j] = 0;
         }
-    }
-
-    //remplisage de la matrice d'adjacence
-    for(size_t s=0; s<m_sommets.size(); ++s)
-    {
-        suceur=m_sommets[s]->getSuccesseurs();
-        for(auto r : suceur)
-        {
-            matrice[s][r.first->getNum()]=r.second;
-        }
-
     }
 
     std::vector<std::pair<int,int>> Distances;
@@ -267,27 +255,15 @@ void Graphe::centraliteintermediarite()
             matricenbchemin[i][j]=Distances[j].second;
         }
     }
-
-    /*for (int i = 0; i < taille; i++)
-    {
-        for (int j = 0; j < taille; j++)
-        {
-            std::cout<<"("<<matricedist[i][j]<<","<<matricenbchemin[i][j]<<") ";
-        }
-        std::cout<<std::endl;
-    }*/
-
+//on calcul l'indice avec les matrice obtenue grace a l'algorithme de Dijkstra
     for (int i = 0; i < taille; ++i)
     {
-
         for(int j=0; j<taille; ++j)
         {
-
             for(int k=0; k<taille; ++k)
             {
                 if(i !=j && i!=k)
                 {
-
                     if(matricedist[j][i]+matricedist[i][k]==matricedist[j][k])
                     {
                         float tempik=matricenbchemin[i][k]-1;
@@ -300,12 +276,11 @@ void Graphe::centraliteintermediarite()
         tempindice.push_back(indice_nn);
         indice_nn=0;
     }
+    //ici on stock dans nos sommets le résultat obtenu
     for(int i=0; i<taille; ++i)
     {
-        //std::cout<<"sommet " << i << " indice: "<<tempindice[i]<<std::endl;
         m_sommets[i]->indice_centralite(taille,tempindice[i]);
     }
-
 
 }
 
@@ -499,13 +474,9 @@ std::vector<int> Graphe::AlegoDjiskra(int num_D) // Alego de Djiskra
         int i=0;
 
 
-
-
-
     return distance;
 
 }
-
 
 
 void Graphe::calcul_indice_proximite()
@@ -550,18 +521,6 @@ void Graphe::affi_indice_Tproximite() const
         std::cout<<std::endl;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 void Graphe::Visualisation_indice(int indice)
 {
