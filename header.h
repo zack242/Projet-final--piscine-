@@ -212,6 +212,7 @@ public :
     void indice_centralite(float ordre,float indicenn);
 
     void affi_centralite_sommmet() const;
+    void DessinSommet(BITMAP* bmp) ;
 
 
 };
@@ -267,6 +268,7 @@ public :
 
             std::string nom ;
             ifs >> nom ;
+
 
             if ( ifs.fail() )
                 throw std::runtime_error("Probleme lecture du nom du sommet");
@@ -404,6 +406,8 @@ public :
             s->Dessiner(page);
 
         }
+        for(auto s : m_sommets)
+            s->DessinSommet(page);
 
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
         std::cout<<"\nTaille : "<<m_taille;

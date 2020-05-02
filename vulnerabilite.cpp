@@ -11,6 +11,7 @@ void Graphe::GrapheConnexe()
     std::vector<std::vector<int>> CC;
     int NonSommet=0;
     int k=0;
+    int e=0;
     bool check=true ;
 
     while(check!=false)
@@ -29,14 +30,16 @@ void Graphe::GrapheConnexe()
             }
             else if(couleur[i]==0)
             {
-                std::cout<<" "<<m_sommets[i]->getNom();
+               e++;
+                std::cout<<" "<<m_sommets[i]->getNom()<<std::endl;
                 couleur[i]=1;
 
             }
 
         }
         k++;
-        std::cout<<"\n";
+        std::cout<<"---- "<<e<<" \n";
+        e=0;
 
     }
 
@@ -173,7 +176,7 @@ void Graphe::ComparaisonIndice()
     calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
-    centraliteintermediarite();
+  //  centraliteintermediarite();
 
     for(auto s : m_sommets)
     {
