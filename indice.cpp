@@ -471,7 +471,7 @@ std::vector<int> Graphe::AlegoDjiskra(int num_D) // Alego de Djiskra
     }
     while(M==true); // tant que tout les sommets ne sont pas marque
 
-        int i=0;
+    int i=0;
 
 
     return distance;
@@ -529,6 +529,7 @@ void Graphe::Visualisation_indice(int indice)
 {
 
     std::vector<float> valeurindice;
+    float tempmax=0;
 
     switch (indice)
     {
@@ -536,14 +537,24 @@ void Graphe::Visualisation_indice(int indice)
     case 1 :  ///Pour chaque indice on push l'indice dans valeur indice suivant le choix du client
 
         for(auto k : m_sommets)
-            valeurindice.push_back(k->getIndice(0));
+        {
+            valeurindice.push_back(k->getIndice(1));
+            if(tempmax<k->getIndice(1))
+                tempmax=k->getIndice(1);
+
+        }
 
         break;
 
     case 2 : /// Indice vecteur propre
 
         for(auto k : m_sommets)
+        {
             valeurindice.push_back(k->getIndice(2));
+            if(tempmax<k->getIndice(2))
+                tempmax=k->getIndice(2);
+
+        }
 
         break;
 
@@ -551,14 +562,24 @@ void Graphe::Visualisation_indice(int indice)
     case 3 : /// Indice vecteur proximite
 
         for(auto k : m_sommets)
+        {
             valeurindice.push_back(k->getIndice(3));
+            if(tempmax<k->getIndice(3))
+                tempmax=k->getIndice(3);
+
+        }
 
         break;
 
     case 4 : /// Indice intermediare
 
         for(auto k : m_sommets)
+        {
             valeurindice.push_back(k->getIndice(4));
+            if(tempmax<k->getIndice(4))
+                tempmax=k->getIndice(4);
+
+        }
 
         break;
 
@@ -570,7 +591,7 @@ void Graphe::Visualisation_indice(int indice)
         for(int i=0 ; i<valeurindice.size(); i++)
             if(valeurindice[i]==k->getIndice(indice))
                 if(k->getColor()==0)
-                    k->setColor(100*i); /// A voir
+                    k->setColor((k->getIndice(indice)*255)/tempmax); /// A voir
 
 
 

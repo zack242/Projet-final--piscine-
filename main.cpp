@@ -173,6 +173,9 @@ Graphe* menu(Graphe* A)
 
         break;
 
+        case 99 :
+            exit(0);
+
 
 
     default :

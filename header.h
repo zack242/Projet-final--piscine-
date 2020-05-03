@@ -10,6 +10,8 @@
 #include <string>
 #include <queue>
 #include <limits>
+#include "svgfile.h"
+
 
 
 struct indice
@@ -207,8 +209,8 @@ public :
     void indice_centralite(float ordre,float indicenn);
 
     void affi_centralite_sommmet() const;
-    void DessinSommet(BITMAP* bmp) ;
-    void Dessiner(BITMAP* bmp);
+    void DessinSommet(BITMAP* bmp,Svgfile& Svgfile) ;
+    void Dessiner(BITMAP* bmp,Svgfile &Svgfile);
 
 
 };
@@ -384,7 +386,7 @@ public :
         set_color_depth(desktop_color_depth()); /// Setup allegro
         BITMAP* page ;
         install_keyboard();
-
+        Svgfile svgfile ;
         if (set_gfx_mode(GFX_AUTODETECT_WINDOWED,700,700,0,0)!=0)
         {
             allegro_message("prb gfx mode");
@@ -397,13 +399,17 @@ public :
         clear_to_color(page,makecol(240,220,210));
 
 
+        svgfile.addRectangle(0,0,900,900,svgfile.makeRGB(240,220,210));
+        svgfile.addGrid();
+
+
         for (auto s : m_sommets)
         {
-            s->Dessiner(page);
+            s->Dessiner(page,svgfile);
 
         }
         for(auto s : m_sommets)
-            s->DessinSommet(page);
+            s->DessinSommet(page,svgfile);
 
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
 

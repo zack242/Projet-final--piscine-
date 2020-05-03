@@ -424,7 +424,7 @@
 
 211	Mennecy	450	764
 
-212	Haussmann–Saint-Lazare_	340	279
+212	Saint-Lazare	340	279
 
 213	Magenta	403	261
 
@@ -440,9 +440,9 @@
 
 219	LeChenay–Gagny	535	260
 
-220	Chelles–Gournay	565	260
+220	Chelles	565	260
 
-221	Rosny–Bois-Perrier	495	280
+221	Perrier	495	280
 
 222	Rosny-sous-Bois	499	295
 

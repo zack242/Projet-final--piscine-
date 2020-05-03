@@ -40,6 +40,8 @@
 		<Unit filename="header.h" />
 		<Unit filename="indice.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="svgfile.cpp" />
+		<Unit filename="svgfile.h" />
 		<Unit filename="vulnerabilite.cpp" />
 		<Extensions>
 			<code_completion />

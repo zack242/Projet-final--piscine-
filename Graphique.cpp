@@ -1,6 +1,6 @@
 #include "header.h"
 
-void Sommet::Dessiner(BITMAP* bmp)
+void Sommet::Dessiner(BITMAP* bmp , Svgfile& svgfile)
 {
     const char *nom = m_nom.c_str();
 
@@ -8,12 +8,11 @@ void Sommet::Dessiner(BITMAP* bmp)
     if(m_ligne==24)
     {
 
-
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(255,20,0));
-            line(bmp,m_x-1,m_y-1,s.first->getX()-1,s.first->getY()-1,makecol(255,20,0));
-            line(bmp,m_x+1,m_y+1,s.first->getX()+1,s.first->getY()+1,makecol(255,20,0));
+
+            svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(255,20,0));
 
         }
 
@@ -24,23 +23,22 @@ void Sommet::Dessiner(BITMAP* bmp)
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(60,145,220));
-            line(bmp,m_x-1,m_y-1,s.first->getX()-1,s.first->getY()-1,makecol(60,145,220));
-            line(bmp,m_x+1,m_y+1,s.first->getX()+1,s.first->getY()+1,makecol(60,145,220));
+
+            svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(60,140,220));
 
         }
-// textprintf_ex(bmp,font,m_x,m_y,makecol(0,0,0),-1,nom);
+
 
     }
     else if(m_ligne==26)
     {
 
- //textprintf_ex(bmp,font,m_x,m_y,makecol(0,0,0),-1,nom);
 
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
-            line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(220,150,0));
-            line(bmp,m_x-1,m_y-1,s.first->getX()-1,s.first->getY()-1,makecol(220,150,0));
-            line(bmp,m_x+1,m_y+1,s.first->getX()+1,s.first->getY()+1,makecol(220,150,0));
+        line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(220,150,0));
+
+         svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(220,150,0));
 
         }
 
@@ -48,12 +46,12 @@ void Sommet::Dessiner(BITMAP* bmp)
     else if(m_ligne==27)
     {
 
- //textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
+
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(0,150,65));
-            line(bmp,m_x-1,m_y-1,s.first->getX()-1,s.first->getY()-1,makecol(0,150,65));
-            line(bmp,m_x+1,m_y+1,s.first->getX()+1,s.first->getY()+1,makecol(0,150,65));
+
+            svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(0,150,65));
         }
 
 
@@ -61,13 +59,13 @@ void Sommet::Dessiner(BITMAP* bmp)
     else if(m_ligne==28)
     {
 
-   // textprintf_ex(bmp,font,m_x+30,m_y,makecol(0,0,0),-1,nom);
+
         for (auto s : m_successeurs) ///Dessin des Arcs
         {
 
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(220,90,180));
-            line(bmp,m_x-1,m_y-1,s.first->getX()-1,s.first->getY()-1,makecol(220,90,180));
-            line(bmp,m_x+1,m_y+1,s.first->getX()+1,s.first->getY()+1,makecol(220,90,180));
+
+            svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(220,90,180));
 
         }
 
@@ -81,6 +79,8 @@ void Sommet::Dessiner(BITMAP* bmp)
         {
             line(bmp,m_x,m_y,s.first->getX(),s.first->getY(),makecol(255,0,0));
 
+            svgfile.addLine(m_x,m_y,s.first->getX(),s.first->getY(),svgfile.makeRGB(255,0,0));
+
 
         }
 
@@ -92,7 +92,7 @@ void Sommet::Dessiner(BITMAP* bmp)
 }
 
 
-void Sommet::DessinSommet(BITMAP* bmp)
+void Sommet::DessinSommet(BITMAP* bmp,Svgfile& svgfile)
 {
 
   const char *nom = m_nom.c_str();
@@ -105,21 +105,35 @@ if((m_num==22 || m_num==60 ||  m_num==23  ||  m_num==81 || m_num==62 || m_num==0
 {
     textprintf_ex(bmp,font,m_x+10,m_y-10,makecol(0,0,0),-1,nom);
 
-      circlefill(bmp,m_x,m_y,8,makecol(255,255,255)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
-      circlefill(bmp,m_x,m_y,6,makecol(m_couleur,0,0)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
+    svgfile.addText(m_x+10,m_y-10,nom,svgfile.makeRGB(0,0,0));
+
+      circlefill(bmp,m_x,m_y,8,makecol(255,255,255));
+      circlefill(bmp,m_x,m_y,6,makecol(m_couleur,0,0));
+
+      svgfile.addDisk(m_x,m_y,8,svgfile.makeRGB(255,255,255));
+      svgfile.addDisk(m_x,m_y,6,svgfile.makeRGB(m_couleur,0,0));
 
 }else
 {
 
- circlefill(bmp,m_x,m_y,4,makecol(m_couleur,0,0)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
+ circlefill(bmp,m_x,m_y,4,makecol(m_couleur,0,0));
+
+ svgfile.addDisk(m_x,m_y,4,svgfile.makeRGB(m_couleur,0,0));
+
 
 }
 if(m_ligne==0)
     {
- textprintf_ex(bmp,font,m_x+10,m_y-10,makecol(0,0,0),-1,nom);
+      textprintf_ex(bmp,font,m_x+10,m_y-10,makecol(0,0,0),-1,nom);
 
-      circlefill(bmp,m_x,m_y,8,makecol(255,255,255)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
-      circlefill(bmp,m_x,m_y,6,makecol(m_couleur,0,0)); ///Cercle pour la visu des indicescirclefill(bmp,m_x,m_y,0,makecol(0,0,0));
+      svgfile.addText(m_x+10,m_y-10,nom,svgfile.makeRGB(0,0,0));
+
+      circlefill(bmp,m_x,m_y,8,makecol(255,255,255));
+      circlefill(bmp,m_x,m_y,6,makecol(m_couleur,0,0));
+
+      svgfile.addDisk(m_x,m_y,8,svgfile.makeRGB(255,255,255));
+      svgfile.addDisk(m_x,m_y,6,svgfile.makeRGB(m_couleur,0,0));
+
 
 }
 
