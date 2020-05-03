@@ -399,7 +399,7 @@ public :
         clear_to_color(page,makecol(240,220,210));
 
 
-        svgfile.addRectangle(0,0,900,900,svgfile.makeRGB(240,220,210));
+        svgfile.addRectangle(0,0,800,800,svgfile.makeRGB(240,220,210));
         svgfile.addGrid();
 
 
@@ -485,6 +485,7 @@ public :
     std::vector<std::pair<int,int>> Dijkstra(int num_s0)const;
     void centraliteintermediarite();
     void affi_indice_centralite() const;
+    void Kconnexite() ;
 
 };
 

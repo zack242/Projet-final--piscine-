@@ -60,6 +60,7 @@ Graphe* menu(Graphe* A)
 
         A=Chargement_Graphe(fichier_topo,fichier_ponde);
         A->setnomFichier(fichier_topo);
+        A->Kconnexite();
 
         break;
 
@@ -138,6 +139,7 @@ Graphe* menu(Graphe* A)
 
         default :
 
+
             break ;
 
         }
@@ -159,6 +161,7 @@ Graphe* menu(Graphe* A)
         case 1 :
 
             A->GrapheConnexe();
+
 
             break;
 
