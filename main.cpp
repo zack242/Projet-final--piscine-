@@ -83,7 +83,7 @@ Graphe* menu(Graphe* A)
         std::cout<<"1/La centralite de degre \n";
         std::cout<<"2/La centralite de vecteur propre \n";
         std::cout<<"3/La centralite de proximite \n";
-        std::cout<<"4/La centralite d’intermediarite \n";
+        std::cout<<"4/La centralite d intermediarite \n";
         std::cout<<"Votre choix : " ;
 
         std::cin>>choix_indice ;
@@ -147,7 +147,7 @@ Graphe* menu(Graphe* A)
     case 4 : /// Test de Vulnerabilite
 
         std::cout<<"\n1/ Test de la connexite du graphe \n";
-        std::cout<<"2/ Suppression d’une ou plusieurs arêtes \n \n ";
+        std::cout<<"2/ Suppression d’une ou plusieurs aretes \n \n ";
         std::cout<<"Votre choix : ";
 
         std::cin>>choix_vulnerabilite;

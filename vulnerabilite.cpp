@@ -18,7 +18,7 @@ void Graphe::GrapheConnexe()
 
     while(check!=false)
     {
-        std::cout<<"Composant Connexe : ";
+        std::cout<<"Composante Connexe : ";
         check=false;
         distance=AlegoDjiskra(NonSommet);
 
@@ -70,7 +70,7 @@ Graphe* Graphe::Sup_aretes()
     std::string depart,arrive;
 
 
-    std::cout<<"Arrets : \n";
+    std::cout<<"Aretes : \n";
 
     for(int i =0 ; i<m_arrets.size() ; i++)  // On affiche les arrets
         {

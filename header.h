@@ -367,7 +367,7 @@ public :
         else
             std::cout<<"non oriente"<<std::endl<<"  ";
         std::cout<<"ordre = "<<m_sommets.size()<<std::endl<<"  ";
-        std::cout<<"listes d'adjacence :"<<std::endl;
+        std::cout<<"liste d'adjacences :"<<std::endl;
         for (auto s : m_sommets)
         {
             s->afficher();
@@ -451,7 +451,7 @@ public :
 
         }
 
-        std::cout<<"\n ----Sauvgarde reussi dans "<<nomFichier<<" ----"<<std::endl;
+        std::cout<<"\n ----Sauvgarde reussie dans "<<nomFichier<<" ----"<<std::endl;
 
     }
 

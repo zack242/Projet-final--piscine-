@@ -25,7 +25,7 @@ void Graphe::calcul_indice_degres()
 void Sommet::affi_degre_sommmet() const
 {
     std::cout<<" sommet : "<<m_nom<< std::endl;
-    std::cout<<"indice de degre normalise : "<<m_indice.degre_nomralise<<" , \n"<<"indice de degre nonnormalise : "<<m_indice.degre_non_normamise<<" .";
+    std::cout<<"indice de degre normalisee : "<<m_indice.degre_nomralise<<" , \n"<<"indice de degre nonnormalisee : "<<m_indice.degre_non_normamise<<" .";
 
 }
 
@@ -499,8 +499,8 @@ void Graphe::calcul_indice_proximite()
 void Sommet::affi_indice_proximite() const
 {
     std::cout<<"Sommet : "<<m_nom<< std::endl;
-    std::cout<<"Indice normalise  : "<<m_indice.proximite_normalise<<"\n" ;
-    std::cout<<"Indice non  normalise  : "<<m_indice.proximite_non_normalise<<"\n" ;
+    std::cout<<"Indice normalisee  : "<<m_indice.proximite_normalise<<"\n" ;
+    std::cout<<"Indice non  normalisee  : "<<m_indice.proximite_non_normalise<<"\n" ;
 
 }
 
