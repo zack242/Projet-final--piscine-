@@ -589,3 +589,25 @@ void Graphe::Visualisation_indice(int indice)
 }
 
 
+void Graphe::Kconnexite()
+{
+int connexite=99;
+calcul_indice_degres();
+
+
+for(auto s : m_sommets)
+   if(connexite > s->getIndice(0))
+   connexite=s->getIndice(0);
+
+   std::cout<<"Le graphe de "<<connexite<<" connexe d'arretes";
+
+
+
+
+
+
+
+
+
+
+}

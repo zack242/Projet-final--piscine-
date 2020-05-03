@@ -152,10 +152,6 @@ for(int k =0; k<t_indice.size();k++) // De meme pour l'arrets
 
 
 
-
-
-
-
 }
 
 // SS De comparaison des indices
@@ -188,7 +184,7 @@ void Graphe::ComparaisonIndice()
     calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
-  //  centraliteintermediarite();
+    centraliteintermediarite();
 
     for(auto s : m_sommets)
     {
