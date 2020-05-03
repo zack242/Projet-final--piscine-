@@ -1,62 +1,5 @@
 #include "header.h"
 
-float nbtopluscourtchemin(int sum_1, int sum_2,int taille,float matrice[300][300],int p)
-{
-//Porgramme utiliser pour metre une matrice d'adjacence a une certaine puissance et nous donne ainsi le nombre de chemin possible entre 2 sommets du graphe qui comporte un nombre d'arret égale a la puissance
-    float ca[taille][taille],cb[taille][taille],tot;
-    float nbtotal=0;
-
-//transfert de notre matrice dans une matrice de calcul
-    for(int i=0; i<taille; i++)
-    {
-        for(int j=0; j<taille; j++)
-        {
-            ca[i][j]=matrice[i][j];
-        }
-    }
-//si la puissance demander vaut 1 on ne fait rien
-    if(p==1)
-    {
-    }
-//sinon pour chaque puissance -1 on entre dans notre boucle de calcul
-    else
-    {
-
-        for(int v=0; v<p-1; v++)
-        {
-            for(int i=0; i<taille; i++)
-            {
-                //transfert de notre matrice de calcul dans une matrice second matrice
-                for(int j=0; j<taille; j++)
-                {
-                    cb[i][j]=ca[i][j];
-                }
-            }
-
-            for(int i=0; i<taille; i++)
-            {
-
-                for(int j=0; j<taille; j++)
-                {
-                    tot=0;
-                    for(int k=0; k<taille; k++)
-                    {
-                        //on calcule la puissance de la matrice
-                        tot=tot+(cb[i][k]*matrice[k][j]);
-                    }
-//on récupaire le résultat
-                    ca[i][j]=tot;
-                }
-            }
-
-        }
-
-    }
-//on récupaire et renvoi au programme appelant le nombre de chemin
-    nbtotal=ca[sum_1][sum_2];
-
-    return nbtotal;
-}
 
 //////////////////////////////////////////////// Indice de degre
 
@@ -161,9 +104,8 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
     }
 //dans cette partie on remplie une matrice avec la taille des plus cours chemin et une autre avec leur nombre
 //on remplie la matrice d'adjacence du graph orienté oubtenu grace a l'algorithme de Dijkstra
-    int taille=0;
     int chemin_t[NbNodes] ;
-    float matrice[300][300];
+    float matrice[NbNodes][NbNodes];
     for (int i = 0; i < NbNodes; i++)
     {
         for (int j = 0; j < NbNodes; j++)
@@ -179,19 +121,66 @@ std::vector<std::pair<int,int>> Graphe::Dijkstra(int num_s0)const
         {
             matrice[i][Parents[i][j]]=1;
             ++j;
-            ++taille;
         }
     }
-    //a l'aide du programme qui "nbtopluscourtchemin" on conte le nombre total de plus court chemin
+    float ca[NbNodes][NbNodes],cb[NbNodes][NbNodes],tot;
+    //transfert de notre matrice dans une matrice de calcul
+    for(int i=0; i<NbNodes; i++)
+    {
+        for(int j=0; j<NbNodes; j++)
+        {
+            ca[i][j]=matrice[i][j];
+
+        }
+
+    }
+
+    for (int i = 0; i < NbNodes-1; ++i)
+    {
+        for(int g =0; g<NbNodes; ++g)
+        {
+            chemin_t[g]=chemin_t[g]+ca[g][num_s0];
+        }
+
+        for(int k=0; k<NbNodes; ++k)
+        {
+            //transfert de notre matrice de calcul dans une matrice second matrice
+            for(int j=0; j<NbNodes; ++j)
+            {
+                cb[k][j]=ca[k][j];
+
+            }
+
+        }
+
+
+        for(int k=0; k<NbNodes; ++k)
+        {
+
+            for(int j=0; j<NbNodes; ++j)
+            {
+                tot=0;
+                for(int z=0; z<NbNodes; ++z)
+                {
+                    //on calcule la puissance de la matrice
+                    tot=tot+(cb[k][z]*matrice[z][j]);
+                }
+//on récupaire le résultat
+                ca[k][j]=tot;
+
+            }
+
+
+        }
+
+
+    }
+
+
     for (int j = 0; j < NbNodes; j++)
     {
         if(j !=num_s0 )
         {
-            for (int i = 1; i < taille+1; i++)
-            {
-                chemin_t[j]=chemin_t[j]+nbtopluscourtchemin(j,num_s0,NbNodes,matrice,i);
-
-            }
             Distances[j].second=chemin_t[j];
         }
     }
@@ -230,8 +219,8 @@ void Graphe::centraliteintermediarite()
 // ce programme regoupe dans 2 matrice la distance des plus cours chemin et leurs nombre pour pouvoir calculer l'indice de centralité intermédiaire
     int taille=m_sommets.size();
 
-    float matricedist[300][300];
-    float matricenbchemin[300][300];
+    float matricedist[taille][taille];
+    float matricenbchemin[taille][taille];
     float indice_nn=0;
     std::vector<float> tempindice;
     std::map<const Sommet*,int> suceur;
@@ -255,6 +244,7 @@ void Graphe::centraliteintermediarite()
             matricenbchemin[i][j]=Distances[j].second;
         }
     }
+
 //on calcul l'indice avec les matrice obtenue grace a l'algorithme de Dijkstra
     for (int i = 0; i < taille; ++i)
     {
@@ -471,7 +461,7 @@ std::vector<int> Graphe::AlegoDjiskra(int num_D) // Alego de Djiskra
     }
     while(M==true); // tant que tout les sommets ne sont pas marque
 
-        int i=0;
+    int i=0;
 
 
     return distance;
