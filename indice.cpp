@@ -532,8 +532,13 @@ void Graphe::calcul_indice_proximite()
     for(auto s : m_sommets)
     {
         temp=0;
+<<<<<<< Updated upstream
         preds=AlegoDjiskra(s->getNum());
         for(auto k : preds)
+=======
+        preds=AlegoDjiskra(s->getNum()); // On appel Djiskra pour chaque sommet
+         // for(auto k : preds)
+>>>>>>> Stashed changes
 
             for(int i=0 ; i<preds.size(); i++)
             {

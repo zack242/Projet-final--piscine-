@@ -147,7 +147,7 @@ void Graphe::ComparaisonIndice()
 
     }
 
-    calcul_indice_degres();
+   // calcul_indice_degres();
     calcul_indice_proximite();
     calcul_vecteur_propre();
 
